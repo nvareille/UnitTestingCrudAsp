@@ -1,0 +1,28 @@
+﻿@model List<CICDAPI.Models.Game>
+
+@{
+    ViewData["Title"] = "Liste des jeux vidéos";
+}
+
+<h1 class="text-center">@ViewBag.monTitre</h1>
+
+<div class="row justify-content-center">
+    <a class="btn btn-primary" role="button" asp-controller="Game" asp-action="Create">Ajouter un nouveau jeu</a>
+</div>
+
+<h2 class="text-center small mt-4 mb-2">Liste des jeux actuels</h2>
+
+<div class="row">
+
+    @foreach (var game in Model)
+
+    {
+    <div class="card border m-2" style="width: 10rem; height: 15rem ">
+        <div class="card-body align-content-center">
+            @game.Id - Titre : @game.Name - Genre : @game.Genre
+            <a style="margin-bottom: 1rem; margin-top: 1rem;" class="btn btn-primary" role="button" asp-controller="Game" asp-action="Edit" asp-route-id=@game.Id>Modifier</a>
+            <a class="btn btn-danger" role="button" asp-controller="Game" asp-action="Delete" asp-route-id=@game.Id>Supprimer</a>
+        </div>
+    </div>
+    }
+</div>

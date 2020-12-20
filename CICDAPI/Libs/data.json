@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "Name": "The Witcher : Le premier Opus",
+    "Genre": "RPG"
+  },
+  {
+    "Id": 2,
+    "Name": "Resident Evil",
+    "Genre": "Horreur"
+  },
+  {
+    "Id": 3,
+    "Name": "Silent Hill",
+    "Genre": "RPG"
+  },
+  {
+    "Id": 4,
+    "Name": "WOW",
+    "Genre": "MMORPG"
+  },
+  {
+    "Id": 5,
+    "Name": "LOL",
+    "Genre": "MOBA"
+  },
+  {
+    "Id": 6,
+    "Name": "Europa",
+    "Genre": "Gestion"
+  }
+]
