@@ -24,7 +24,7 @@ namespace TestsUnitaires
         [TestMethod]
         public void IndexIsOk()
         {
-            GameController controller = new GameController();
+            GameController controller = new GameController(new FakeGameRepository());
             var result = controller.Index();
 
             Assert.IsInstanceOfType(result, typeof(ViewResult), "Il doit afficher une view !");
@@ -34,7 +34,7 @@ namespace TestsUnitaires
         [TestMethod]
         public void GetViewCreateIsOk()
         {
-            GameController controller = new GameController();
+            GameController controller = new GameController(new FakeGameRepository());
             var result = controller.Create();
 
             Assert.IsInstanceOfType(result, typeof(Microsoft.AspNetCore.Mvc.ViewResult), "Il doit afficher une view !");
@@ -50,7 +50,7 @@ namespace TestsUnitaires
                 Genre = "DARK"
             };
 
-            GameController controller = new GameController();
+            GameController controller = new GameController(new FakeGameRepository());
             var result = controller.Create(gameCreate);
 
             Assert.IsInstanceOfType(result, typeof(Microsoft.AspNetCore.Mvc.RedirectToActionResult), "Si les changements sont post, la méthode redirect !");
@@ -62,7 +62,7 @@ namespace TestsUnitaires
         public void EditErrorIsOk()
         {
             var idTyped = 0;
-            GameController controller = new GameController();
+            GameController controller = new GameController(new FakeGameRepository());
             var result = controller.Edit(idTyped);
 
             Assert.IsInstanceOfType(result, typeof(Microsoft.AspNetCore.Mvc.RedirectToActionResult), "Puisqu'il n'y a pas d'instance similaire à l'id écrit, on trigger le redirect 404");

@@ -14,7 +14,13 @@ namespace CICDAPI.Controllers
     [Route("api/[controller]")]
     public class GameController : Controller
     {
-
+        private IRepository<Game> GameRepository;
+        
+        public GameController(IRepository<Game> gameRepo)
+        {
+            GameRepository = gameRepo;
+        }
+        
         /// <summary>
         ///On affiche les objets du json dans la view 
         /// </summary>

@@ -10,5 +10,17 @@ namespace CICDAPI.Models
         public string Name { get; set; }
         public string Genre { get; set; }
     }
+
+    public class GameDto
+    {  
+        public string Name { get; set; }
+        public string Genre { get; set; }
+
+        public void Transfert(Game game)
+        {
+            Name = game.Name;
+            Genre = game.Genre;
+        }
+    }
 }
 
